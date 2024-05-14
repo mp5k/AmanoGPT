@@ -12,7 +12,7 @@ from langchain.callbacks import get_openai_callback
 def init_page():
     st.set_page_config(
         page_title="AmanoGPT",
-        page_icon="🤗"
+        page_icon="🤖"
     )
     st.header("AmanoGPT")
     st.sidebar.title("各種設定")
@@ -28,11 +28,13 @@ def init_messages():
 
 
 def select_model():
-    model = st.sidebar.radio("モデル", ("GPT-3.5", "GPT-4"))
+    model = st.sidebar.radio("モデル", ("GPT-3.5", "GPT-4", "GPT-4o"))
     if model == "GPT-3.5":
         model_name = "gpt-3.5-turbo"
-    else:
+    elif model == "GPT-4":
         model_name = "gpt-4-turbo"
+    elif model == "GPT-4o":
+        model_name = "gpt-4o"
 
     # スライダーを追加し、temperatureを0から2までの範囲で選択可能にする
     # 初期値は0.0、刻み幅は0.01とする
