@@ -28,7 +28,7 @@ def init_messages():
 
 
 def select_model():
-    model = st.sidebar.radio("モデル", ("GPT-3.5", "GPT-4", "GPT-4o"))
+    model = st.sidebar.radio("モデル", ("GPT-3.5", "GPT-4", "GPT-4o"), index=2)
     if model == "GPT-3.5":
         model_name = "gpt-3.5-turbo"
     elif model == "GPT-4":
